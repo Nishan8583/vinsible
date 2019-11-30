@@ -20,7 +20,7 @@ func CreateSSHConnection() {
 	config := &ssh.ClientConfig{
 		User: "nishan",
 		Auth: []ssh.AuthMethod{
-			ssh.Password("MeroSanoVai@7887"),
+			ssh.Password(""),
 		},
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(), // Not a ssh key based authenticaiton for now
 	}
@@ -64,7 +64,7 @@ func CreateSSHConnection() {
 			log.Println(string(line))
 			if bytes.HasSuffix(line, []byte{58}) {
 
-				_, err := in.Write([]byte("MeroSanoVai@7887" + "\n"))
+				_, err := in.Write([]byte("" + "\n"))
 				if err != nil {
 					log.Println(err)
 				}
